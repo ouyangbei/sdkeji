@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+   <% include ../title/title%> 
+   <link href="/css/users/register.css" rel="stylesheet" >
+</head>
+<body>
+	<div class="reg_container">
+		<div class="register">
+			<img class="tohome" src="/img/backtohome.png">
+			<img src="/img/loginlogo.png">
+			<div class="reg_inp">
+				<input type="text"  onclick="check()" id="phoneNum" placeholder="用户名/手机号">
+			</div>
+			<div class="reg_inp">
+				<input type="password"  onclick="check()" id="password" placeholder="密码">
+			</div>
+			<h4 id="err"></h4>
+			<div id="register" onclick="javascript:login()">立即登录</div>
+			<h3>没有账号 <span id="reg"><a href="/register">马上注册<a></span></h3>
+		</div>
+	</div>
+
+<!-- sweetalert -->
+<script src = "/js/jquery-2.0.3.min.js" ></script>
+<script src = "/js/userreg/login.js" ></script>
+
+</body>
+</html>

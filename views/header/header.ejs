@@ -1,0 +1,53 @@
+<nav id="header">
+	<div class="headerTop">
+		<div class="hdt_cont">
+			<a href="/" target="_blank" rel="noopener noreferrer"><img src="/img/logo.png"></a>
+			<div class="search">
+				<div class="search_con">
+					<div class="check_area">
+						<span class="seac">内容</span>
+						<img  class="seac" src="/img/search_choose.png">
+						<div class="search_type_choose">
+							<div id="search_by_content">内容</div>
+							<div id="search_by_user">用户</div>
+						</div>
+					</div>
+					<div class="input_area">
+						<input id="search_content" type="text"  placeholder="请输入搜索内容">
+					</div>
+				</div>	
+				<div class="search_area_cont">
+					<div class="search_area">
+						<img src="/img/search_white.png">
+					</div>
+				</div>	
+					
+			</div>
+			<% if(userInfo!=1){%>
+			<div id="u_mes">
+					<a target="_blank" class="u_mes_a" href="/user" rel="noopener noreferrer">
+						<img  src="<%= userInfo.icon%>">
+					</a>
+					<div class="log"><%= userInfo.nick_name%>&nbsp;</div>			
+			</div>
+			<div id="edit_log">
+				<a href="/profile" target="_blank" rel="noopener noreferrer"><div>修改资料</div></a>
+				<div id="logout">退出登录</div>
+			</div>
+			<%}else{%>
+				<div id="u_mes">	
+					<!-- <img src="/img/userhead.png"> -->
+					<div id="login" class="log">登录|</div>
+					<div id="register" class="reg">注册</div>					
+				</div>
+			<%}%>
+		</div>
+	</div>
+	<div class="headerbottom">
+		<div class="hdb_cont">
+			<a href="/" class="hom" target="_blank" rel="noopener noreferrer"><div <% if(type == 'home'){%>class="active"<%}%>>首页</div></a>
+			<a <%if(userInfo != '1'){%> target="_blank" rel="noopener noreferrer" href="/write"<%}else{%>onclick="message_login()"<%}%> class="wri"><div <% if(type == 'write'){%>class="active"<%}%>>我要发帖</div></a>
+			<a <%if(userInfo != '1'){%> target="_blank" rel="noopener noreferrer" href="/user"<%}else{%>onclick="message_login()"<%}%> class="per"><div <% if(type == 'personalcenter'){%> class="active" <%}%>>个人中心</div></a>
+		</div>
+	</div>
+</nav>

@@ -1,0 +1,28 @@
+<!-- 文章詳細信息 -->
+<%  for(var i=0 ; i < details.length ; i++) {%>
+	<%  
+		var type =  details[i].type;
+	%>
+	<% if( type == "txt") {%>
+		<div class="text">
+			<% if (details[i].title){ %>
+				<h3><%= details[i].title%></h3>
+			<%}%>
+			<p><%= details[i].content%></p>
+		</div>
+	<%}else if ( type == "img") {%>
+		<div class="img">
+			<img class="lazy" data-original="<%= details[i].url%>">
+			<% if( details[i].content) {%>
+				<%
+					var content = details[i].content;
+					var contentlength = content.length;
+					if(contentlength > 40){
+						content = content.substring(0,40) + "..."
+					}
+				%>
+				<h3 ><%= content%></h3>
+			<%}%>
+		</div>		
+	<%}%>
+<%}%>

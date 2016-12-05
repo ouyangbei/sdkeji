@@ -1,0 +1,126 @@
+#main_container{
+	background   : #fff;
+	border-radius: 3px ;
+	padding      : 20px;
+	margin-bottom: 80px;
+}
+.head_{
+	color: #656565;
+	width   : 100%;
+	height  : auto;
+	overflow: hidden;
+}
+.u_nic{
+	width: 950px;
+	float: left;
+}
+#photoFileUpload{
+	cursor: pointer;
+}
+input, textarea{
+	color: #656565;
+}
+.u_hea{
+	width: 210px;
+	float: right;
+	position: relative;
+	text-align: center;
+}
+.u_nic > h3 {
+	margin : 0px;
+	padding: 20px; 
+	color  : #4d4d4d; 
+	border-bottom: 1px solid #eaeff4;
+	border-right : 1px solid #eaeff4;
+}
+.u_list {
+	width : 100%;
+	height: auto;
+	overflow: hidden;
+	padding: 10px;
+	border-bottom: 1px solid #eaeff4;
+}
+.u_list > input{
+	width  : 500px;
+	height : 40px; 
+	padding: 10px;
+	float: left;
+	font-size: 16px;
+	outline: none;
+	border : 1px solid #c6c6c6;
+}
+.u_list > div {
+	width  : 100px;
+	height : 100%;
+	padding: 10px;
+	float: left;
+	font-size: 16px;
+	color: #4d4d4d;
+	text-align: right;
+}
+#u_descript{
+	width  : 500px;
+	padding: 15px;
+	min-height: 100px;
+	border : 1px solid #c6c6c6;
+	outline: none;
+	resize : none;
+}
+.u_list > h3 {
+	color: #979797;
+	width     : 100%;
+	font-size : 14px;
+	padding-left: 500px;
+	text-align: left;
+}
+.u_list > h3 > span {
+	color: #fc7a55;
+}
+select{
+	height: 40px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#u_sex{
+	width: 200px;
+	text-align: left;
+	padding:10px;
+}
+#u_sex > label {
+	height: 20px;
+}
+#u_sex > label > input {
+	width: 20px;
+	height: 20px;
+}
+#u_head {
+	border: none;
+	width : 160px;
+	height: 160px;
+}
+.u_hea > form > input {
+	width   : 160px;
+	height  : 160px;
+	top     : 0px;
+	left    : 25px;
+	opacity : 0;
+	position: absolute;
+}
+.u_hea > div {
+	width: 100%;
+	color: #979797;
+	text-align: center;
+	padding: 30px;
+}
+#savepro{
+	padding   : 15px;
+	width: 95px;
+	margin-top: 2px;
+	color     : #fff;
+	border-radius: 3px;
+	margin-left: 30px;
+	background: #41689e;
+	cursor    : pointer;
+}
+
+

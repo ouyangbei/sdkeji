@@ -1,0 +1,31 @@
+<% if(articles.length == 0){%>
+	<h3 id="nothing">什么都没有哦！</h3>
+<%}else{%>
+	<% for(var i = 0; i < articles.length; i++) {%>
+		<% 
+			if(articles[i].type == '0'){
+				var art_from = "原创";
+			}else{
+				var art_from = "转载";
+			}
+		%>
+	<div class="article" id="<%= articles[i].id%>">
+		<img src="<%= articles[i].title_img%>">
+		<div class="art_message">
+			<h3><%= articles[i].title %></h3>
+			<div class="art_com">
+				<span class="art_ori"><%= art_from%></span>
+				<div>
+					<span class="art_sawcount">&nbsp;&nbsp;&nbsp;<img src="img/article_1.png">&nbsp;<%= articles[i].view_count%>&nbsp;&nbsp;</span>
+					<span class="art_comcount">&nbsp;<img src="img/article_2.png">&nbsp;<%= articles[i].reply_count%>&nbsp;&nbsp;</span>
+					<span class="art_likecount">&nbsp;<img src="img/article_3.png">&nbsp;<%= articles[i].great_count%></span>
+				</div>
+			</div>
+			<div class="art_user_mess">
+				<span onclick="editArt('<%= articles[i].id%>')">编辑/</span>
+				<span onclick="deleteArt('<%= articles[i].id%>')">删除</span>
+			</div>
+		</div>
+	</div>
+	<%}%>
+<%}%>

@@ -1,0 +1,33 @@
+<%for(var i = 0; i< results.comments.length;i++){%>
+<% 
+		var userInfo  =  JSON.parse(results.comments[i].personInfo); 
+		var stare     =  results.commentsCount - 20*(results.page -1) - i;
+	 %>
+
+<div class="comment">
+	<div class="userhead">
+		<img src="<%= userInfo.icon%>">
+	</div>
+	<% if( results.comments[i].type == 'subject' || results.comments[i].type == 'img'){%>
+	<div class="com_contents">
+		<h3><span class="username"><%= userInfo.nick_name%></span> <span class="updatetime"><%= results.comments[i].createDate%></span><span class="stair_count"><%=stare%>楼</span></h3>
+		<p class="com"><%= results.comments[i].content%> </p>
+	</div>
+	<%}else{%>
+	<% var touser = JSON.parse( results.comments[i].replyJsonObj.personInfo) %>
+	<div class="com_contents">
+		<h3><span class="username"><%= userInfo.nick_name%></span> <span class="updatetime"><%= results.comments[i].createDate%></span><span class="stair_count"><%=stare%>楼</span></h3>
+		<p class="comto"><%= results.comments[i].replyJsonObj.content %></p>
+		<div class="coment_to">
+			<p class="comment_to_content">
+				回复&nbsp;
+				<span id="">
+					<%= touser.nick_name%>:
+				</span>&nbsp;
+				<span class="cont"><%= results.comments[i].content%> </span>
+			</p>
+		</div>
+	</div>
+	<%}%>
+</div>
+<%}%>

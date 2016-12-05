@@ -1,0 +1,245 @@
+#focus{
+	width   : 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	padding : 0px;
+	height  : 370px;
+	clear   : both; 
+	overflow: hidden;
+	position: relative;
+}
+.foc_img{
+	transition: 0.5s;
+	width: 100%;
+}
+.foc_img >  img {
+	cursor : pointer; 
+	height : 370px;
+	width  : 100%;
+}
+#focus > div {
+	position: absolute;
+}
+.foc_title{
+	top    : 30px;
+	left   : 40px;
+	height : 80px;
+	color  : #8f8f8f; 
+	overflow: hidden;
+}
+.foc_title > img {
+	width : 80px;
+	height: 80px;
+}
+.foc_title > img ,h1{
+	float   : left;
+	position: relative;
+}
+.foc_title > div > h1 {
+	margin: 0px;
+	font-size: 40px;
+}
+.foc_time{
+	height    : 100px;
+	overflow  : hidden;
+	font-size : 24px;
+	padding-top  : 2px;
+	padding-left: 10px;
+}
+.foc_time > span {
+	font-size: 16px;
+}
+.foc_list{
+	width   : 100px;
+	height  : auto;
+	padding : 25px 0px 0px 0px;
+	overflow: hidden;
+	right   : 10px;
+	top     : 60px;
+}
+.foc_list > img {
+	text-align: center;
+	margin-left  : auto;
+	margin-right  : auto;
+	border  : 3px solid rgba(0,0,0,0);
+	cursor  : pointer;
+	width   : 94px;
+	margin-top: 10px;
+	height  : 60px;
+}
+.focus_img{
+	border: 3px solid #f7931e !important;
+}
+.foc_list > img:hover{
+	border: 3px solid #f7931e;
+}
+#main_container{
+	width: 1230px;
+}
+#articles{
+	height  : auto;
+	overflow: hidden;
+	width   : 100%;
+}
+.article{
+	transition: 0.5s;
+	transition-delay:0s;
+	float   : left;
+	width   : 400px;
+	padding :10px 10px 0px 10px;
+	margin  :3px 5px 3px 5px;
+	position: relative;
+	border:1px solid rgba(0,0,0,0);
+	border-radius:1px;
+}
+.article > a {
+	width: 100%;
+	height: 230px;
+}
+.article_cont > a > img{
+	background: #ebebeb;
+	width: 100%;
+	height: 230px;
+}
+.article_cont{
+	width: 100%;
+	height: auto;
+	/*overflow: hidden;*/
+	position: relative;
+}
+.article:hover{
+	/*box-shadow: 0 0 0 1px red; */
+
+	-webkit-box-shadow:0px 0px 5px rgba(53, 53, 53, .3);  
+	-moz-box-shadow:0px 0px 5px rgba(53, 53, 53, .3);  
+	box-shadow: 0px 0px 5px rgba(53, 53, 53, .3);
+	border:1px solid #e3e6ee;
+	background: #fff;
+}
+.article:hover .article_cont>.art_message>.art_user_mess{
+	transition: 0.5s;
+	border-bottom: 1px solid rgba(0,0,0,0);
+}
+.art_type{
+	position: absolute;
+	top     : 20px;
+	left    : 20px;
+	color   : #fff; 
+	padding: 4px 6px 4px 6px;
+	border-radius: 3px;
+	background: #41689e;
+	font-size: 12px;
+}
+.art_message{
+	width: 100%;
+}
+.art_message >a > h3 {
+	transition: 0.3s;
+	padding  : 10px 10px 10px 0px;
+	margin   : 0px;
+	height   : 40px;
+	color    : #3b5064; 
+	height   : 40px; 
+	font-size: 15px;
+	width    : 100%;
+	overflow : hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.art_message >a > h3:hover{
+	color: #868686;
+}
+.art_message >a> div {
+
+	width: 100%;
+	color: #9aabb8;
+	font-size: 15px;
+	font-weight: 200;
+}
+.art_message > div {
+
+	width: 100%;
+	color: #9aabb8;
+	font-size: 15px;
+	font-weight: 200;
+}
+.art_sawcount,.art_comcount,.art_likecount{
+	font-size: 16px;
+	font-weight: 200;
+}
+.art_com{
+	height: 24px;
+	overflow: hidden;
+}
+.art_com > div > span {
+	padding: 0px;
+	cursor: default;
+	font-size: 14px;
+	position: relative;
+}
+.art_com > span {
+	cursor: default;
+}
+.art_com > div {
+	cursor: default;
+	margin-top: 0px;
+	float: left;
+	height: auto;
+	overflow: hidden;
+}
+.art_ori{
+	font-size: 12px;
+	float: left;
+	padding  : 1px 5px 2px 5px;
+	background:#dfe5e9;
+	border-radius: 3px;
+}
+.art_com > div > span > img{
+	vertical-align:middle;
+	height: 15px;
+}
+.art_user_mess{
+	height: auto;
+	z-index: 2;
+	overflow: hidden;
+	margin-bottom: -1px;
+	border-bottom: 1px solid #d8d8d8;
+}
+.art_user_mess > img{
+	float: left;
+	padding: 5px;
+	width  : 30px;
+	height : 30px;
+	border-radius: 50%;
+}
+.art_user_mess > h5 {
+	height: 20px;
+	font-weight: 400;
+	color: #2c3e50 !important;
+	float : left;
+	margin: 10px;
+}
+#more_art{
+	width     : 500px;
+	color     : #626a6d;
+	padding   : 10px;
+	cursor    : pointer;
+	margin-top: 30px;
+	transition: 0.3s;
+	text-align: center;
+	border-radius: 3px;
+	margin-left : auto;
+	margin-right: auto; 
+	background  : #dfe5e9;
+}
+#more_art:hover{
+	color: #333;
+	background:#ebebeb;
+}
+
+
+
+
+
+
+

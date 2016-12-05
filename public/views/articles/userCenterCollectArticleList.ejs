@@ -1,0 +1,35 @@
+<% if(articles.length == 0){%>
+	<h3 id="nothing">什么都没有哦！</h3>
+<%}else{%>
+	<% for(var i = 0; i < articles.length; i++) {%>
+		<% 
+			if(articles[i].type == '0'){
+				var art_from = "原创";
+			}else{
+				var art_from = "转载";
+			}
+		%>
+	<div class="article" id="<%= articles[i].id%>">
+		<a href="/top/<%= articles[i].id%>" rel="noopener noreferrer" target="_blank">
+			<img src="<%= articles[i].title_img%>">
+		</a>
+		<div class="art_message">
+		<a href="/top/<%= articles[i].id%>" rel="noopener noreferrer" target="_blank">
+			<h3><%= articles[i].title %></h3>
+			<div class="art_com">
+				<span class="art_ori"><%= art_from%></span>
+				<div>
+					<span class="art_sawcount">&nbsp;&nbsp;&nbsp;<img src="/img/article_1.png">&nbsp;<%= articles[i].view_count%>&nbsp;&nbsp;</span>
+					<span class="art_comcount">&nbsp;<img src="/img/article_2.png">&nbsp;<%= articles[i].reply_count%>&nbsp;&nbsp;</span>
+					<span class="art_likecount">&nbsp;<img src="/img/article_3.png">&nbsp;<%= articles[i].great_count%></span>
+				</div>
+			</div>
+			</a>
+			<a href="/users/<%= articles[i].person_info_id%>" rel="noopener noreferrer" target="_blank" class = "art_user_mess">
+				<img src="<%= articles[i].icon%>?imageView/2/w/100/h/100/q/100">
+				<h5><%= articles[i].nick_name%></h5>
+			</a>
+		</div>
+	</div>
+	<%}%>
+<%}%>

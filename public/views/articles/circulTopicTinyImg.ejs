@@ -1,0 +1,10 @@
+<!-- 
+	获取首页大图
+-->
+<% for(var i = 0 ; i < topics.length ; i++){%>
+	<%if (topics[i].thumbnail){%>
+		<img id = "<%= topics[i].id%>" <%if(i==0){%> class="focus_img" <%}%> src="<%= topics[i].thumbnail%>">
+	<%}else{%>
+		<img id = "<%= topics[i].id%>" <%if(i==0){%> class="focus_img" <%}%> src="<%= topics[i].title_img%>">
+	<%}%>
+<%}%>

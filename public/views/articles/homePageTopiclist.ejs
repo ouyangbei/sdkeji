@@ -1,0 +1,5 @@
+<!-- 首页分类列表 -->
+
+<% for(var i=0 ; i < topics.length ; i++ ){%>
+	<span <%if(topics[i].id==topicid){%> class="active"<%}%> onclick = 'share("<%= topics[i].url%>", "<%=topics[i].id%>" ,"<%= topics[i].name%>")' id = "<%= topics[i].id %>" ><%= topics[i].name%></span>
+<%}%>

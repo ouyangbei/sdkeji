@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+   <% include ../title/title%>
+   <link href="/css/artmenu/artmenu.css" rel="stylesheet"> 
+</head>
+<body>
+	<%include ../header/header%>
+	<div id="main_container">
+		<div id="focus">
+			<div class="foc_img">
+				<img src="<%=imgurl%>">
+			</div>
+			<div class="foc_title">
+
+			</div>
+		</div>
+		<div id="menu">
+			<a href="/" class="menua" target="_blank" rel="noopener noreferrer">
+				<span>首页推荐</span>
+			</a>
+			<% for(var i=0 ; i < topicList.length ; i++ ){%>
+			<a href="/share/<%=topicList[i].id%>" class="menua" target="_blank" rel="noopener noreferrer">
+				<span  id = "<%= topicList[i].id %>"<%if(topicid == topicList[i].id ){%>class="active"<%}%> >
+					<%= topicList[i].name%>
+				</span>
+			</a>	
+			<%}%>
+		</div>
+		<div id="articles">
+			<% include ../../public/views/articles/topicArticleList%>
+		</div>
+		<%if((totalPage <= 1) || (lastPage == true)){%>
+			
+		<%}else{%>
+		<div id="more_art" onclick="moreArticleList()">
+			加载更多
+		</div>
+		<%}%>
+	</div>
+<%include ../footer/footer%>
+<script src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>	
+<script src="/js/plugins/ejs/ejs.js" type="text/javascript"></script>
+<script src="/js/style.js" type="text/javascript"></script>
+<script src="/js/share/share.js" type="text/javascript"></script>
+
+</body>
+</html>

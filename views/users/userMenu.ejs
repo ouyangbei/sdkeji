@@ -1,0 +1,7 @@
+<div id="user_menu">
+	<div <%if(usersInfo !='1'){%> id="/users/<%=usersInfo.id%>" <%}else{%> id="/user" <%}%> class="user_art <%if(titles == 'user' || titles == 'users'){%> active <%}%>">作品</div>
+	<div <%if(usersInfo !='1'){%> id="/states/comment?id=<%=usersInfo.id%>" <%}else{%> id="/state/comment" <%}%> class="user_collect <%if(titles == 'state'){%> active <%}%>">动态</div>
+	<%if(usersInfo =='1' ){%>
+	<div <%if(usersInfo !='1'){%> id="/collects/<%=usersInfo.id%>" <%}else{%> id="/collect" <%}%>  class="user_collect <%if(titles == 'collect'){%> active <%}%>">收藏</div>
+	<%}%>
+</div>

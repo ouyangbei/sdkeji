@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+   <% include ./title/title%>
+   <link href="/css/write/write.css" rel="stylesheet"> 
+   <link href="/css/plugins/cropper/cropper.min.css" rel="stylesheet"> 
+</head>
+
+<body>
+	<% include ./header/header %>
+	<div id="main_container">
+		<section id="content">
+			<div class="title_container">
+				<h2>发布帖子<span>&nbsp;&nbsp;如为转载请选择转载类型</span></h2>
+				<input id="title" class="title" type="text" placeholder="请输入标题，标题长度小于35个字符">
+			    <div class="type">
+			    	<span id="original" class="active">原创</span>
+			    	<span id="reship" >转载</span>
+			    	<div id="add_type">
+			    		<div>干货分享</div>
+			    		<div>备考经验</div>
+			    		<div>留学生活</div>
+			    		<div>申请指导</div>
+			    	</div>
+			    	<span id="type_chose">请选择所属类别</span>
+			    </div>
+			</div>
+			<div id="add_cont" class="_">
+				<div id="add_">
+					<span id="add_text">添加文字</span>
+					<span id="add_img">添加图片
+						<form id='myupload'  method='POST' enctype='multipart/form-data'>
+						<input class="photoFileUpload"  name="attachment" type="file" accept="image/gif, image/jpeg, image/png">
+						</form>
+					</span>
+					<!-- <span id="add_video">添加视频</span> -->
+				</div>
+				<!-- <div id="video">
+					<span class="video_close">×</span>
+					<h5>目前仅支持优酷视频</h5>
+					<input type="text" class="video_input" placeholder="在此输入优酷视频连接">
+					<button id="video_confirm">确认</button>
+				</div> -->
+				<h3>点击上方按钮，添加相应模块</h3>
+			</div>
+			<ul id="content_container">
+				
+			</ul>
+			<input name="list1SortOrder" type="hidden" />
+		</section>
+		<section id="save_cont">
+			<div class="coverImgChoose">
+				<div class="cover_pre">
+				</div>
+				<form id="cover_img_select" class="upload" enctype="multipart/form-data">
+				  <input name="attachment" class="cover_img" type="file"  title="点击选择图片" accept="image/gif, image/jpeg, image/png">
+				</form>
+				<div id="cover_img">
+					<img src="img/add.png">
+				</div>
+			</div>
+
+			<h3>编辑封面</h3>
+			<div class="send_container">
+				<div id = "send" onclick="send()">发布</div>
+			</div>
+			
+
+		</section>
+	</div><!-- main_end -->
+	<% include ./footer/footer %>	
+	<% include ./comcontent/process %>
+<!-- drop -->
+<script src="/js/plugins/cropper/cropper.min.js"></script>
+<!-- cropper -->
+<script src="/js/plugins/drop/jquery.dragsort.min.js"></script>
+<!-- sweetalert -->
+<script src="/js/warning/warning.js" type="text/javascript"></script>
+<!-- commonstyle -->
+<script src="/js/style.js"></script>
+<script src="/js/plugins/ejs/ejs.js"></script>
+<script src="/js/write/write.js"></script>
+</body>
+</html>

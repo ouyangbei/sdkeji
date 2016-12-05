@@ -1,0 +1,29 @@
+<li class="content_text">
+	<div class="text_container">
+		<h3>
+			<div>
+				<i></i>
+				<i></i>
+				<i></i>
+			</div>
+		</h3>
+		<span>×</span>
+		<img id="img_url" src="<%= url%>">
+		<textarea class="img_content"  onkeyup="javascript:textwordnum(this)" placeholder="在此输入描述"></textarea>
+		<h4>还可以输入<span>200</span>字</h4>
+	</div>
+	<span id="new_content">+</span>
+	<div id="add_cont" class="appendnew">
+		<span class="cancel_newcont">×</span>
+		<div id="add_">
+			<span id="add_text">添加文字</span>
+			<span id="add_img">添加图片
+				<form id='myupload'  method='POST' enctype='multipart/form-data'>
+				<input class="photoFileUpload"  name="attachment" type="file" accept="image/gif, image/jpeg, image/png">
+				</form>
+			</span>
+			
+		</div>
+		
+	</div>
+</li>

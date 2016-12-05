@@ -1,0 +1,14 @@
+<% if(results.length == 0){%>
+	<h3 id="nothing">什么都没有哦！</h3>
+<%}else{%>
+	<% for(var i=0;i< results.length;i++) {%>
+	<div class="state state_collect">
+		<div class="state_content">
+			<h4>我评论了
+			<a class="state_username" target="_blank" href="/users/<%= results[i].to_person_id%>" rel="noopener noreferrer"><span class="state_username">&nbsp;<%= results[i].to_nick_name%></span></a>&nbsp;的文章&nbsp;《<a class="state_username" href="/top/<%=results[i].subject_id%>" rel="noopener noreferrer" target="_blank"><%= results[i].subject_title%></a>》</h4>
+			<p class="state_updatetime"><%= results[i].create_date%></p>
+			<p class="state_comment_content"><%= results[i].content%></p>
+		</div>
+	</div>
+	<%}%>
+<%}%>

@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+   <% include ../../title/title%>
+   <link href="/css/users/user.css" rel="stylesheet"> 
+</head>
+<body>
+	<%include ../../header/header%>
+	<div id="main_container">
+		<%include ../../users/usersMessage%>
+		<%include ../../users/userMenu%>
+		<div id="articles">
+			<%include ../../../public/views/articles/userCenterArticleList%>
+		</div>
+		<div id="more_art" class="tcdPageCode">
+		</div>
+	</div>
+<%include ../../footer/footer%>
+<script src="/js/style.js"></script>
+<script src="/js/plugins/page/jquery_page.js"></script>
+<script src="/js/warning/warning.js"></script>
+<script src="/js/plugins/ejs/ejs.js"></script>
+<script src="/js/users/state/style.js"></script>
+<script src="/js/users/state/usercenter.js"></script>
+</body>
+	
+</html>

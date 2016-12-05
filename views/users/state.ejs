@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+   <% include ../title/title%>
+   <link href="/css/users/user.css" rel="stylesheet">
+   <link href="/css/users/state.css" rel="stylesheet"> 
+</head>
+<body>
+	<%include ../header/header%>
+	<div id="main_container">
+		<div id="user_mes">
+			<img id="u_head"  src="<%=userInfo.icon + '?imageView/2/w/200/h/200/q/100'%>">
+			<div class="user_text">
+				<h3 id = "u_name"><%=userInfo.nick_name%></h3>
+				<div class="user_fol user_fol_count">
+					<div id ="follower" class="<%= userInfo.id%>">粉丝 <span><%=userInfo.fins%></span></div>
+					<div id ="followee" class="<%= userInfo.id%>">关注 <span><%=userInfo.follow%></span></div>
+				</div>
+				<div class="user_fol user_pre">
+					<div>
+						<div>
+							<a href="/profile">修改资料</a>
+						</div>
+					</div>
+					<div>
+						<div>
+							<a href="/profile">修改头像</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="user_desc">
+			   <div>
+			   	<%if (userInfo.introduce){%>
+			   		“<%= userInfo.introduce%>”
+			   	<%}else{%>
+			   		这家伙很懒，什么都没写
+			   	<%}%>	
+			   </div>
+			</div>
+		</div>
+		<%include ../users/userMenu%>
+		<div class="states">
+			<div class="state_menu">
+				<div class="active" id="/state/comment">评论</div>
+				<div id="/state/collect">收藏 / 赞</div>
+				<div id="/state/great">我的赞</div>
+				<div id="/state/mycomment">我的评论</div>
+			</div>
+			<div id="states">
+				<div class="state state_comment">
+					<div class="state_userhead">
+						<img src="/img/share.png">
+					</div>
+					<div class="state_content">
+						<h4><span class="state_username">琴琴</span>&nbsp;评论了TA的文章&nbsp;《<span class="state_username">标题/此为标题</span>》</h4>
+						<p class="state_updatetime">2016-08-24 15:33:23</p>
+						<p class="state_comment_content">受益匪浅，赞赞赞~</p>
+					</div>
+					<div class="state_deleted">
+						<span>删除</span>
+					</div>
+				</div>
+				<div class="state state_collect">
+					<div class="state_content">
+						<h4><span class="state_username">琴琴</span>&nbsp;收藏了TA的文章&nbsp;《<span class="state_username">标题/此为标题</span>》</h4>
+						<p class="state_updatetime">2016-08-24 15:33:23</p>
+					</div>
+				</div>
+				<div class="state state_collect">
+					<div class="state_content">
+						<h4><span class="state_username">琴琴</span>&nbsp;赞了TA的文章&nbsp;《<span class="state_username">标题/此为标题</span>》</h4>
+						<p class="state_updatetime">2016-08-24 15:33:23</p>
+					</div>
+				</div>
+				<div class="state state_comment">
+					<div class="state_userhead">
+						<img src="/img/share.png">
+					</div>
+					<div class="state_content">
+						<h4><span class="state_username">琴琴</span>&nbsp;评论了TA的文章&nbsp;《<span class="state_username">标题/此为标题</span>》</h4>
+						<p class="state_updatetime">2016-08-24 15:33:23</p>
+						<p class="state_comment_content">受益匪浅，赞赞赞~</p>
+					</div>
+					<div class="state_deleted">
+						<span>删除</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="more_art" class="tcdPageCode">
+		</div>
+	</div>
+<%include ../footer/footer%>
+<script src="/js/style.js"></script>
+<script src="/js/plugins/page/jquery_page.js"></script>
+<script src="/js/warning/warning.js"></script>
+<script src="/js/plugins/ejs/ejs.js"></script>
+<script src="/js/users/usercenter.js"></script>
+
+</body>
+	
+</html>

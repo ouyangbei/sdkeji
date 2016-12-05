@@ -1,0 +1,21 @@
+<!-- 文章詳細信息 -->
+<%  for(var i=0 ; i < details.length ; i++) {%>
+	<%  
+		var type =  details[i].type;
+	%>
+	<% if( type == "txt") {%>
+		<div class="text_content">
+			<% if (details[i].title){ %>
+				<h3 class="littletitle"><%= details[i].title%></h3>
+			<%}%>
+			<p><%- details[i].content.replace(/\n/g,'<br>')%></p>
+		</div>
+	<%}else if ( type == "img") {%>
+		<div class="img_container">
+			<img class="lazy" data-original="<%= details[i].url%>">
+			<% if( details[i].content) {%>
+				<div ><%- details[i].content%></div>
+			<%}%>
+		</div>
+	<%}%>
+<%}%>

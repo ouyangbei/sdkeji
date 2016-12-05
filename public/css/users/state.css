@@ -1,0 +1,115 @@
+.states{
+	width: 1200px;
+	height: auto;
+	overflow: hidden;
+	margin-left: auto;
+	margin-right: auto;
+	border-top:1px solid #eaebeb;
+	border-left:1px solid #e5e5e5;
+	border-right:1px solid #e5e5e5;
+	background: #fff;
+	margin-top: 10px;
+}
+#states{
+	height: auto;
+	overflow: hidden;
+}
+.user_menu{
+	background: #fff;
+}
+.state_menu{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.state_menu > .active{
+	color: #ff9866 !important;
+}
+.state{
+	float: left;
+	position: relative;
+}
+.state_menu > div{
+	cursor: pointer;
+	transition: 0.4s;
+	padding: 22px 18px 0px 33px;
+	float: left;
+	color: #b2b2b2;
+}
+.tcdPageCode{
+	background:#eff3f5;
+}
+.state_deleted{
+	display: none;
+	height:auto;
+	overflow: hidden;
+	position: absolute;
+	bottom: 18px;
+	width:140px;
+	right: 0px;
+	color:#7a7a7a;
+}
+.state_collect{
+	padding:18px 33px 19px 33px;
+}
+.state_collect > .state_content > h4{
+	margin:0px;
+	font-weight: 400;
+	color: #989898;
+}
+.state_menu >div:hover{
+	color: #666;
+}
+.state_menu > .active{
+	color: #666;
+}
+.state{
+	width: 100%;
+	border-bottom: 1px solid #dbe4ed;
+}
+.state_userhead{
+	float: left;
+	width: 113px;
+	padding:21px 24px 28px 31px;
+	height: 109px;
+}
+.state_userhead > img{
+	width: 100%;
+	height: 100%;
+}
+.state_my_comment{
+	padding-left: 33px;
+	padding-bottom: 15px;
+	width: 100%;
+}
+.state_comment > .state_content{
+	width: 920px;
+	padding-bottom: 15px;
+	float: left;
+}
+.state_comment > .state_content >h4{
+	width: 100%;
+	margin: 0px;
+	/*letter-spacing: */
+	padding-top:21px; 
+	font-weight: 400;
+	color: #989898;
+}
+.state_updatetime{
+	color: #707070;
+	margin: 0px;
+	font-size: 12px;
+	padding-top: 5px;
+}
+.state_comment_content{
+	color: #7a7a7a;
+	margin: 0px;
+	padding-top: 12px;
+}
+.state_content > h4 > .state_username{
+	color: #ff9866;
+	transition: 0.3s;
+}
+.state_content > h4 > .state_username:hover{
+	color: rgb(195,70,44);
+}

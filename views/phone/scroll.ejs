@@ -1,0 +1,21 @@
+<img id="scroll" onclick="scrolltoTop()" src="/img/phone/top.png">
+<script>
+	window.onscroll = function(){ 
+		scrollStop ();
+	} 
+	function scrollStop(){
+		var scroTop = getScrollTop();
+		if(scroTop >= 100){
+			$('#scroll').css({'margin-bottom':'15px','display':'block','transition':'0.3s'});
+		}else{
+			$('#scroll').css({'margin-bottom':'-100px'});
+		}
+	}
+	function getScrollTop(){
+		return $(document).scrollTop();
+	}
+	function scrolltoTop(){
+		$("html,body").animate({scrollTop: '0px' },300);
+		$("#scroll").css({'margin-bottom':'-100px'});
+	}
+</script>

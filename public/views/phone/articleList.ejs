@@ -1,0 +1,55 @@
+<% for(var i = 0; i < articles.length ; i++ ) {%>
+			<% 
+				var topicId = articles[i].topic_id;
+				
+				for(var j=0; j < topicList.length; j++){
+					if(topicId == topicList[j].id){
+						var type = topicList[j].name;
+						switch(topicId){
+						case  'e9de5423-1a88-4177-ac43-2eebbe8fda46' :  var bac = "#41689e";break;	
+						case  '0fe88224-c240-4b8d-aa57-77103682dd2a' :  var bac = "#689767";break;	
+						case  'd15f115c-1e6b-4724-9c0e-63dbef615699' :  var bac = "#b68e50";break;	
+						case  '76de3d6c-4017-4629-9cf4-1ba67b372b15' :  var bac = "#d36f4b";break;	
+						case  '169e256b-06b3-4e6b-8448-5984397de7d5' :  var bac = "#41689e";break;
+						default : var bac = "#d36f4b";break;
+						}
+					}
+				}
+				if(articles[i].type == '0'){
+					var art_from = "原创";
+				}else{
+					var art_from = "转载";
+				}
+			%>
+			<div   class="article">
+				<div class="article_cont">
+					<a href="/top/<%= articles[i].id%>"> 
+						<span class="art_type" style="background : <%= bac%>"><%= type %></span>
+						<div class="art_title">
+							<h3>
+							<% if(articles[i].title_admin){%>
+								<%= articles[i].title_admin%>
+							<%}else{%>  
+								<%= articles[i].title%>
+							<%}%>
+							</h3>
+						</div>
+						<img class="lazy" data-original="<%= articles[i].title_img%>?imageView/2/w/600/h/500/q/100" alt="<%= articles[i].title%>">
+					</a>
+					<div class="art_message">
+						<div class="art_com">
+							<span class="art_ori"><%=art_from%></span>
+							<div>
+								<div class="art_sawcount">&nbsp;&nbsp;<img src="/img/article_1.png">&nbsp;<div><%=articles[i].view_count%></div>&nbsp;&nbsp;</div>
+								<div class="art_comcount">&nbsp;&nbsp;<img src="/img/article_2.png">&nbsp;<div><%=articles[i].reply_count%></div>&nbsp;&nbsp;</div>
+								<div class="art_likecount">&nbsp;&nbsp;<img src="/img/article_3.png">&nbsp;<div><%=articles[i].great_count%></div></div>
+							</div>
+						</div>
+						<div id = "" class = "art_user_mess">
+							<img src="<%= articles[i].icon%>?imageView/2/w/100/h/100/q/100">
+							<h5><%= articles[i].nick_name%></h5>
+						</div>
+					</div>
+				</div>
+			</div>
+			<%}%>

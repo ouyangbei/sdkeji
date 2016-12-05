@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+   <% include ../title/title%>
+   <link href="/css/users/profile.css" rel="stylesheet"> 
+</head>
+<body>
+	<%include ../header/header%>
+
+	<div id="main_container">
+		<div class="head_">
+			<div class="u_nic">
+				<h3>基本资料</h3>
+				<div class="u_list">
+					<div>昵称</div>
+					<input maxlength="15" id = "u_name">
+				</div>
+				<div class="u_list">
+					<div>个性签名</div>
+					<input maxlength="50"  id = "u_sign">
+				</div>
+			</div>
+			<div class="u_hea">
+				<img id="u_head">
+				<form id="upload-file-form" class="upload" enctype="multipart/form-data">
+					 <input name="attachment" id="photoFileUpload" title="点击选择图片" type="file" accept="image/gif, image/jpeg, image/png">
+				</form>
+				<div>点击图片修改头像</div>
+			</div>
+		</div>
+		<div class="bottom_">
+			<div class="u_list">
+				<div>性别</div>
+				<div id="u_sex"> 
+					<input name="Fruit" type="radio" value="0" />男 
+					<input name="Fruit" type="radio" value="1" />女 
+					<input name="Fruit" type="radio" value="2" />保密 
+				</div> 
+			</div>
+			<div class="u_list">
+			    <div>居住地</div>	
+				<select onchange="provinceSelect(this)" id="province" >
+				  <option value ="">省份</option>
+				</select>
+				<select id="city">
+				  <option value ="">城市</option>
+				</select>
+			</div>
+			<div class="u_list">
+				<div>职业</div>
+				<input id = "u_job" maxlength="20" type="text">
+			</div>
+			<div class="u_list">
+				<div>院校</div>
+				<input id = "u_school" maxlength="30" type="text" >
+			</div>
+			<div class="u_list">
+				<div>生日</div>
+				<select class="sel_year" rel="2000"> </select> 年 
+				<select class="sel_month" rel="2"> </select> 月 
+				<select class="sel_day" rel="14"> </select>
+			</div>
+			<div class="u_list">
+				<div>QQ</div>
+				<input  id = "u_qq" maxlength="15" type="text">
+			</div>
+			<div class="u_list" >
+				<div>微信</div>
+				<input id = "u_weixin" maxlength = "25" type="text">
+			</div>
+			<div class="u_list">
+				<div>个人简介</div>
+				<textarea onkeyup="descCount(this)" id="u_descript" maxlength="100"></textarea>
+				<h3>还能输入<span>100</span>字</h3>
+			</div>
+			<div id="savepro">保存修改</div>
+		</div>
+	</div><!-- main_end -->
+<%include ../footer/footer%>
+<% include ../comcontent/process %>
+<script src="/js/warning/warning.js"></script>
+<script src="/js/style.js"></script>
+<script src="/js/province.js"></script>
+<script src="/js/birthday.js"></script>
+<script src="/js/users/profile.js"></script>
+</body>
+	
+</html>

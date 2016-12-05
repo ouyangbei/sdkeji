@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+   <% include ../title/title%> 
+   <link href="/css/users/register.css" rel="stylesheet" >
+   <!-- sweetalert -->
+   <link href="//cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="reg_container">
+		<div class="register reg_con">
+			<img class="tohome" src="img/backtohome.png">
+			<img src="img/loginlogo.png">
+			<div class="reg_inp">
+				<input type="text" onmouseleave="checkPhone()" id="phoneNum" placeholder="手机号">
+				<h4 id="err"></h4>
+			</div>
+			<div class="reg_inp reg_pas_inp">
+				<input type="password" id="password" placeholder="密码">
+			</div>
+			
+			<div id="popup-captcha"></div>
+			<div id="getImgVeri">请滑动图片验证</div>
+			<div class="vcode">
+				<input type="text" id="vcode" placeholder="验证码">
+				<div onclick="javascript:getvcode()" id="getvcode" >获取验证码</div>
+				<div id="time"></div>
+			</div>
+			<div id="register" onclick="javascript:register()" >立即注册</div>
+			<h3><a href="/agreement" style="float: left;color:#656565;">用户协议<a> 已有账号 &nbsp;<span id="reg"><a href="/login" style="color:#ffb07a">立即登录<a></span></h3>
+		</div>
+	</div>
+<script src = "/js/jquery-2.0.3.min.js" ></script>
+<script src="http://static.geetest.com/static/tools/gt.js"></script>
+<!-- sweetalert -->
+<script src="//cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
+<script src = "/js/userreg/register.js" ></script>
+
+</body>
+</html>

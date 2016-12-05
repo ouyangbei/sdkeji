@@ -1,0 +1,35 @@
+<div id="user_mes">
+			<img id="u_head"  src="<%=userInfo.icon + '?imageView/2/w/200/h/200/q/100'%>">
+			<div class="user_text">
+				<h3 id = "u_name"><%=userInfo.nick_name%></h3>
+				<div class="user_fol user_fol_count">
+					<div id ="follower">
+						<a  href="/follower/<%= userInfo.id%>" rel="noopener noreferrer" target="_blank">粉丝 <span><%=userInfo.fins%></span></a>
+					</div>
+					<div id="followee">
+						<a  href="/follow/<%= userInfo.id%>" rel="noopener noreferrer" target="_blank">关注 <span><%=userInfo.follow%></span></a>
+					</div>
+				</div>
+				<div class="user_fol user_pre">
+					<div>
+						<div>
+							<a href="/profile" target="_blank" rel="noopener noreferrer">修改资料</a>
+						</div>
+					</div>
+					<div>
+						<div>
+							<a href="/profile" target="_blank" rel="noopener noreferrer">修改头像</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="user_desc">
+			   <div>
+			   	<%if (userInfo.introduce){%>
+			   		“<%= userInfo.introduce%>”
+			   	<%}else{%>
+			   		这家伙很懒，什么都没写
+			   	<%}%>	
+			   </div>
+			</div>
+		</div>

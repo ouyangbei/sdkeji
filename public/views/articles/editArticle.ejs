@@ -1,0 +1,107 @@
+<section id="content">
+			<div class="title_container">
+				<h2>修改帖子<span>&nbsp;&nbsp;如为转载请选择转载类型</span></h2>
+				<input id="title" class="title" type="text" value="<%= article.subject.title%>" placeholder="请输入标题，标题长度6~30字">
+			    <div class="type">
+			    	<span id="original" <% if(article.subject.type == '0') {%>class="active" <%}%> >原创</span>
+			    	<span id="reship" <% if(article.subject.type == '1') {%>class="active" <%}%> >转载</span>
+			    	<div id="add_type">
+			    	</div>
+			    	<span id="type_chose" style="display: none">请选择所属类别</span>
+			    </div>
+			</div>
+			<div id="add_cont" class="_">
+				<div id="add_">
+					<span id="add_text">添加文字</span>
+					<span id="add_img">添加图片
+						<form id='myupload'  method='POST' enctype='multipart/form-data'>
+						<input class="photoFileUpload"  name="attachment" type="file" accept="image/gif, image/jpeg, image/png">
+						</form>
+					</span>
+					<!-- <span id="add_video">添加视频</span> -->
+				</div>
+				<!-- <div id="video">
+					<span class="video_close">×</span>
+					<h5>目前仅支持优酷视频</h5>
+					<input type="text" class="video_input" placeholder="在此输入优酷视频连接">
+					<button id="video_confirm">确认</button>
+				</div> -->
+				<h3>点击上方按钮，添加相应模块</h3>
+			</div>
+			<ul id="content_container">
+				<% for (var i = 0 ; i < article.details.length; i++){%>
+					<% var type = article.details[i].type; %>
+					<% if(type == 'txt') {%>
+						<li class="content_text">
+							<div class="text_container">
+								<h3>
+									<div>
+										<i></i>
+										<i></i>
+										<i></i>
+									</div>
+								</h3>
+								<span>×</span>
+								<% if (article.details[i].title){%>
+									<input class="title_tiny" type="text" maxlength="100" value="<%= article.details[i].title%>" placeholder="在此可输入小标题">
+								<%}else{%>
+									<input class="title_tiny" type="text"  placeholder="在此可输入小标题">
+								<%}%>
+								<textarea class="text_content" onkeyup="javascript:textwordnum(this)" placeholder="在此输入内容"><%= article.details[i].content%></textarea>
+								<h4>还可以输入<span>1000</span>字</h4>
+							</div>
+					<%}else if( type == 'img'){%>
+						<li class="content_text">
+							<div class="text_container">
+								<h3>
+									<div>
+										<i></i>
+										<i></i>
+										<i></i>
+									</div>
+								</h3>
+								<span id = "<%= article.details[i].id%>">×</span>
+								<img id="img_url" src="<%= article.details[i].url%>">
+								<% if( article.details[i].content ){%>
+								<textarea class="img_content"  onkeyup="javascript:textwordnum(this)"  placeholder="在此输入描述"><%= article.details[i].content%></textarea>
+								<%}else{%>
+								<textarea class="img_content"  onkeyup="javascript:textwordnum(this)" placeholder="在此输入描述"></textarea>
+								<%}%>
+								<h4>还可以输入<span>200</span>字</h4>
+							</div>
+					<%}%>
+							<span id="new_content">+</span>
+							<div id="add_cont" class="appendnew">
+								<span class="cancel_newcont">×</span>
+								<div id="add_">
+									<span id="add_text">添加文字</span>
+									<span id="add_img">添加图片
+										<form id='myupload'  method='POST' enctype='multipart/form-data'>
+										<input class="photoFileUpload"  name="attachment" type="file" accept="image/gif, image/jpeg, image/png">
+										</form>
+									</span>
+								</div>
+							</div>
+						</li>
+				<%}%>
+			</ul>
+			<input name="list1SortOrder" type="hidden" />
+		</section>
+		<section id="save_cont">
+			<div class="coverImgChoose">
+				<div class="cover_pre">
+					<img id = "cover_pre" src="<%= article.subject.title_img%>">
+				</div>
+				<form id="cover_img_select" class="upload" enctype="multipart/form-data">
+				  <input name="attachment" class="cover_img" type="file"  title="点击选择图片" accept="image/gif, image/jpeg, image/png">
+				</form>
+				<div id="cover_img">
+					<img src="img/add.png">
+				</div>
+			</div>
+
+			<h3>编辑封面</h3>
+			<div class="send_container">
+				<div id = "send" onclick="send()">发布</div>
+			</div>
+		</section>

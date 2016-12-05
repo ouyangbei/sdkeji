@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圣点科技生物识别系统</title>
+    <script src="js/jquery-2.0.3.min.js"></script>
+</head>
+<body  style="font-family:Arial ,Microsoft YaHei">
+<textarea id = 'textarea' style="width: 300px;height: 400px"></textarea>
+<button id="send">完成</button>
+<img id="img" src="">
+<script type="text/javascript">
+    $('#send').click(function(event) {
+        var html = $('#textarea').val();
+        $('#img').attr('src',html);
+    });
+</script>
+</body>
+
+</html>

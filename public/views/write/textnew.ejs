@@ -1,0 +1,34 @@
+<li class="content_text">
+	<div class="text_container">
+		<h3>
+			<div>
+				<i></i>
+				<i></i>
+				<i></i>
+			</div>
+		</h3>
+		<span>×</span>
+		<input class="title_tiny" type="text" placeholder="在此可输入小标题">
+		<textarea class="text_content" onkeyup="javascript:textwordnum(this)" placeholder="在此输入内容"></textarea>
+		<h4>还可以输入<span>1000</span>字</h4>
+	</div>
+	<span id="new_content">+</span>
+	<div id="add_cont" class="appendnew">
+		<span class="cancel_newcont">×</span>
+		<div id="add_">
+			<span id="add_text">添加文字</span>
+			<span id="add_img">添加图片
+				<form id='myupload'  method='POST' enctype='multipart/form-data'>
+				<input class="photoFileUpload"  name="attachment" type="file" accept="image/gif, image/jpeg, image/png">
+				</form>
+			</span>
+			<!-- <span id="add_video">添加视频</span> -->
+		</div>
+		<!-- <div id="video">
+			<span class="video_close">×</span>
+			<h5>目前仅支持优酷视频</h5>
+			<input type="text" class="video_input" placeholder="在此输入优酷视频连接">
+			<button id="video_confirm">确认</button>
+		</div> -->
+	</div>
+</li>

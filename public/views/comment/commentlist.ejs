@@ -1,0 +1,86 @@
+<% if( results.commentsCount == 0 ){%>
+	<h2>还没有评论</h2>
+<%}else{%>
+	<% for(var i = 0; i < results.comments.length ; i++ ) {%>
+	<% 
+		var userInfo  =  JSON.parse(results.comments[i].personInfo); 
+		var stare     =  results.commentsCount - 20*(results.page -1) - i;
+	 %>
+	<div class="comment">
+		<a class="userhead" href ="/users/<%= userInfo.id%>" target="_blank" rel="noopener noreferrer">
+			<img src="<%= userInfo.icon%>">
+		</a>
+		<div class="com_contents">
+			<h3>
+			<a href ="/users/<%= userInfo.id%>" target="_blank" rel="noopener noreferrer"> 
+				<span class="username tousercenter" id = "<%= userInfo.id%>"><%= userInfo.nick_name%></span> 
+			</a>
+			<span class="updatetime"><%= results.comments[i].createDate%></span><span class="stair_count"><%= stare%>楼</span></h3>
+			<% if( results.comments[i].type == 'subject' ||results.comments[i].type == 'img'){%>
+			<p class="com"><%= results.comments[i].content%> </p>
+			<div class="coment_to">
+				<div>
+					<% if (results.userInfo) {%>
+						<% var user_Id  = results.userInfo.userId %>
+						<% if(user_Id == userInfo.id) {%>
+							<%if(results.comments[i].content =='此条评论已被删除！'){%>
+							<%}else{%>
+							<span id="first_comment" class="rash"onclick="deleteComment('<%= results.comments[i].id %>',this)" ></span>&nbsp;
+							<%}%>
+						<%}%>
+					<%}%>
+					<%if(results.comments[i].content =='此条评论已被删除！'){%>
+					<%}else{%>
+					<span class="great_count"><%= results.comments[i].greatCount %>&nbsp;</span>
+					<span onclick="greatComment('<%= results.comments[i].id %>',this)" class="great_contain">
+						<!-- <img onclick="greatComment('<%= results.comments[i].id %>',this)" class="greatimg"  src="/img/article_3.png"> -->&nbsp;
+					</span>	
+					<span id = "reply">回复</span>
+					<%}%>
+				</div>
+			</div>
+			<%}else{%>
+			<p class="comto"><%= results.comments[i].replyJsonObj.content %></p>
+			<% var touser = JSON.parse( results.comments[i].replyJsonObj.personInfo) %>
+			<div class="coment_to">
+				<p class="comment_to_content">
+					回复&nbsp;
+					<a href ="/users/<%= touser.id%>" target="_blank" rel="noopener noreferrer"> 
+						<span id="<%= touser.id%>">
+							<%= touser.nick_name%>:
+						</span>&nbsp;
+					</a>
+					<span class="cont"><%= results.comments[i].content%> </span>
+				</p>
+				<div>
+					<% if (results.userInfo) {%>
+						<% var user_Id  = results.userInfo.userId %>
+						<% if(user_Id == userInfo.id) {%>
+							<%if(results.comments[i].content =='此条评论已被删除！'){%>
+							<%}else{%>
+								<span id="first_comment" class="rash"onclick="deleteComment('<%= results.comments[i].id %>',this)" ></span>&nbsp;
+							<%}%>
+						<%}%>
+					<%}%>
+
+					<%if(results.comments[i].content =='此条评论已被删除！'){%>
+					<%}else{%>
+					<span class="great_count"><%= results.comments[i].greatCount %>&nbsp;</span>
+					<span class="great_contain" onclick="greatComment('<%= results.comments[i].id %>',this)">
+						<!-- <img onclick="greatComment('<%= results.comments[i].id %>',this)" class="greatimg"  src="/img/article_3.png"> -->&nbsp;
+					</span>
+					<span id = "reply">回复</span>
+					<%}%>
+				</div>
+			</div>
+			<%}%>
+		</div>
+		<div class="reply">
+			<textarea id = "<%= results.comments[i].id %>" onkeyup="javascript:commentCount(this)" placeholder="请发表评论，评论中不要带有侮辱国家和他人的言论，字数在300字以内。"></textarea>
+			<h3 class="reply_com">还可以输入<span>300</span>字</h3>
+			<div onclick="commentToComment(this)" id="reply_com"  class="reply_com" onclick="replycomment()"><span>评论</span></div>
+			<div id="cancel_reply" class="reply_com" onclick="replycomment()"><span>取消</span></div>
+		</div>
+	</div>
+	<%}%>
+<%}%>
